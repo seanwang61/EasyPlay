@@ -25,17 +25,20 @@
                                     <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tub-3W-Ocv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToN-60-1Qf">
-                                <rect key="frame" x="422" y="484" width="32" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Next"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO5-DP-wrS">
-                                <rect key="frame" x="263" y="484" width="75" height="30"/>
+                                <rect key="frame" x="88" y="458" width="75" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Play/Pause"/>
                                 <connections>
                                     <action selector="PlayPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z7N-s5-V47"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToN-60-1Qf">
+                                <rect key="frame" x="109" y="530" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="SkipForwardSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2C4-tc-Elx"/>
                                 </connections>
                             </button>
                         </subviews>

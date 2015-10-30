@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -30,23 +31,36 @@ class ViewController: UIViewController {
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
         }
+        self.player?.setIsPlaying(isPlaying, callback: nil)
+        
         if(isPlaying == false){
             isPlaying = true;
+            print("music paused")
         }
         else
         {
+            print("music played")
             isPlaying = false;
         }
-        self.player?.setIsPlaying(isPlaying, callback: nil)
+        //self.player?.setIsPlaying(isPlaying, callback: nil)
         
     }
+    @IBAction func SkipForwardSong(sender: AnyObject) {
+        if player == nil {
+            player = SPTAudioStreamingController(clientId: kClientID)
+        }
+        player?.skipNext(nil)
+    }
+    
     func addSongtoPlaylist(trackID: String)
     {
+        print("song added to playlist!")
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
         }
         
         var formattedTrackName = NSURL(string: "spotify:track:"+trackID);
+        print(formattedTrackName)
         userPlaylistTrackStrings.append(formattedTrackName!)
         //self.player?.queueURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
         
@@ -128,8 +142,8 @@ class ViewController: UIViewController {
             //SPTRequest.requestItemAtURI(<#T##uri: NSURL!##NSURL!#>, withSession: <#T##SPTSession!#>, callback: <#T##SPTRequestCallback!##SPTRequestCallback!##(NSError!, AnyObject!) -> Void#>)
             //SPTTrack.trackWithURI(<#T##uri: NSURL!##NSURL!#>, session: <#T##SPTSession!#>, callback: <#T##SPTRequestCallback!##SPTRequestCallback!##(NSError!, AnyObject!) -> Void#>)
             
-           // self.addSongtoPlaylist("3KUs7BeZGMze6HDDdFlb7j") //loveland
-            //self.addSongtoPlaylist("24w8CSNGN34hYPCrjdRLob") //fairytale
+            self.addSongtoPlaylist("3KUs7BeZGMze6HDDdFlb7j") //loveland
+            self.addSongtoPlaylist("24w8CSNGN34hYPCrjdRLob") //fairytale
             
             SPTTrack.trackWithURI(NSURL(string: "spotify:track:3f9zqUnrnIq0LANhmnaF0V"), session: sessionObj, callback: { (error:NSError!, trackObj:AnyObject!) -> Void in
                 if error != nil {
@@ -140,9 +154,10 @@ class ViewController: UIViewController {
                 //self.player?.playTrackProvider(track, callback: nil)
                 print("song will play lol")
                 //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
-                self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
+                //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
                 
-                //self.player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
+                self.player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
+                //self.player?.play
                 //self.player?.playURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
             })
             /*
