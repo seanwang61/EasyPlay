@@ -14,4 +14,5 @@ class Song {
     var title = ""
     var album = ""
     var artist = ""
+    var trackID = ""
 }

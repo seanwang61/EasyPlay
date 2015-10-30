@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-Vp-av7">
-                                <rect key="frame" x="56" y="256" width="488" height="88"/>
-                                <animations/>
-                                <state key="normal" image="log_in-mobile"/>
-                                <connections>
-                                    <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tub-3W-Ocv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO5-DP-wrS">
                                 <rect key="frame" x="88" y="458" width="75" height="30"/>
                                 <animations/>
@@ -39,6 +31,18 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="SkipForwardSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2C4-tc-Elx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-Vp-av7">
+                                <rect key="frame" x="247" y="283" width="107" height="34"/>
+                                <animations/>
+                                <state key="normal" title="Spotify Login">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="log_in-mobile" backgroundImage="log_in-mobile"/>
+                                <connections>
+                                    <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tub-3W-Ocv"/>
                                 </connections>
                             </button>
                         </subviews>

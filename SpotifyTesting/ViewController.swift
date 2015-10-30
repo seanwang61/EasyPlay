@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 let json = JSON(data: data!)
                 
                 print(json["tracks"]["items"].count);
-                print(json["tracks"]["items"])
+                //print(json["tracks"]["items"])
                 
                 for var i = 0; i < json["tracks"]["items"].count; i++ {
                     
@@ -69,9 +69,11 @@ class ViewController: UIViewController {
                     song.title = data["name"].string!
                     song.album = data["album"]["name"].string!
                     song.artist = data["artists"][0]["name"].string!
+                    song.trackID = data["id"].string!
                     
                     print(song.title)
                     print(song.artist)
+                    print(song.trackID)
                     
                     self.songs += [song]
                     
