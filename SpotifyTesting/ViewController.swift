@@ -8,10 +8,12 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+
 
 class ViewController: UIViewController {
 
-    
+    //"https://api.spotify.com/v1/search?q=tania%20bowra&type=artist"
     
     let kClientID = "4d63faabbbed404384264f330f8610b7";
     let kCallBackURL = "SpotifyTesting://callback"
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
     
     var userPlaylistTrackStrings = [NSURL]()
     var isPlaying = false;
+    
+    //array of songs returned by spotify search request
+    var songs: [Song] = []
     
     @IBOutlet weak var PlayPause: UIButton!
     
@@ -43,6 +48,36 @@ class ViewController: UIViewController {
             isPlaying = false;
         }
         //self.player?.setIsPlaying(isPlaying, callback: nil)
+        /*
+        Alamofire.request(.GET, "https://api.spotify.com/v1/search?q=loveland&type=track")
+            .responseJSON { response in
+                debugPrint(response)*/
+        Alamofire.request(.GET, "https://api.spotify.com/v1/search?q=loveland&type=track").response { request, response, data, error in
+                
+                let json = JSON(data: data!)
+                
+                print(json["tracks"]["items"].count);
+                print(json["tracks"]["items"])
+                
+                for var i = 0; i < json["tracks"]["items"].count; i++ {
+                    
+                    let data = json["tracks"]["items"][i]
+                    
+                    // return the object list
+                    let song = Song()
+                    
+                    song.title = data["name"].string!
+                    song.album = data["album"]["name"].string!
+                    song.artist = data["artists"][0]["name"].string!
+                    
+                    print(song.title)
+                    print(song.artist)
+                    
+                    self.songs += [song]
+                    
+                }
+        }
+        
         
     }
     @IBAction func SkipForwardSong(sender: AnyObject) {

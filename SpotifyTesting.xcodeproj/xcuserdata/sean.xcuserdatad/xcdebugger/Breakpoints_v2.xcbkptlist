@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpotifyTesting/ViewController.swift"
@@ -19,14 +19,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SpotifyTesting.ViewController.kClientID.getter : Swift.String"
                   moduleName = "SpotifyTesting"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sean/Desktop/Projects/SpotifyTesting/SpotifyTesting/ViewController.swift"
-                  timestampString = "467859336.242805"
+                  timestampString = "467862225.120187"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -34,33 +34,33 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SpotifyTesting.ViewController.init (SpotifyTesting.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SpotifyTesting.ViewController"
                   moduleName = "SpotifyTesting"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sean/Desktop/Projects/SpotifyTesting/SpotifyTesting/ViewController.swift"
-                  timestampString = "467859336.24325"
+                  timestampString = "467862225.120687"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
                   offsetFromSymbolStart = "81">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SpotifyTesting.ViewController.init (SpotifyTesting.ViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SpotifyTesting.ViewController&gt;"
                   moduleName = "SpotifyTesting"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sean/Desktop/Projects/SpotifyTesting/SpotifyTesting/ViewController.swift"
-                  timestampString = "467859336.243771"
+                  timestampString = "467862225.121034"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
                   offsetFromSymbolStart = "38">
                </Location>
             </Locations>
@@ -73,12 +73,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpotifyTesting/ViewController.swift"
-            timestampString = "467858782.854821"
+            timestampString = "467859824.852979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "addSongtoPlaylist(_:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "PlayPause(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,12 +89,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpotifyTesting/ViewController.swift"
-            timestampString = "467858782.854821"
+            timestampString = "467859824.852979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "addSongtoPlaylist(_:)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "PlayPause(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
