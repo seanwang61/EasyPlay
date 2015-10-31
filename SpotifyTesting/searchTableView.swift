@@ -26,7 +26,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = true;
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -34,7 +34,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = true;
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -44,7 +44,8 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         if(searchActive == true){
         self.getSongs(searchText)
         
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
+
         }
     }
     
@@ -82,8 +83,8 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
                 
                 let json = JSON(data: data!)
                 
-                print(json["tracks"]["items"].count);
-                print(json["tracks"]["items"])
+                //print(json["tracks"]["items"].count);
+                //print(json["tracks"]["items"])
                 
                 for var i = 0; i < json["tracks"]["items"].count; i++ {
                     
@@ -105,6 +106,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView!.reloadData()
                 }*/
+                self.tableView!.reloadData()
                 
         }
         
@@ -138,13 +140,18 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         return songs.count
     }
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView called")
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
+        print(indexPath.row)
+        //print(songs.count)
+        if(songs.count > 0){
         let song = songs[indexPath.row]
         
         cell.textLabel?.text = song.title
+        }
         //cell.detailTextLabel?.text = song.artist + " - " + song.album
         
         return cell
