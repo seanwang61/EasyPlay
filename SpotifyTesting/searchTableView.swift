@@ -13,10 +13,47 @@ import SwiftyJSON
 class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     
-
+    var searchActive : Bool = false
+    
+    var filtered:[String] = []
+    
+    @IBOutlet weak var SongSearchBar: UISearchBar!
     
     var songs: [Song] = []
-
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print("searchDisplayController called")
+        self.getSongs(searchText)
+        
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /* Setup delegates */
+        tableView.delegate = self
+        tableView.dataSource = self
+        SongSearchBar.delegate = self
+        
+    }
     
     func getSongs(timer: String!) {
         
@@ -33,7 +70,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         
         // create the url for the web request
         let uri: String = "https://api.spotify.com/v1/search?q=\(searchTermEncoded!)&type=artist,album,track"
-        
+
         
         Alamofire
             .request(.GET, uri)
@@ -60,24 +97,25 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
                     self.songs += [song]
                     
                 }
-                
+                /*
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView!.reloadData()
-                }
+                }*/
+                
         }
         
     }
-    
+    /*
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
         
         print("searchDisplayController called")
-        self.songs.removeAll()
+
         self.getSongs(searchString)
         
         return true
         
-        
-    }
+
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
