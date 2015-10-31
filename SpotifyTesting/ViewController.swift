@@ -25,6 +25,15 @@ class ViewController: UIViewController {
     var userPlaylistTrackStrings = [NSURL]()
     var isPlaying = false;
     
+    
+    //table view
+    @IBOutlet
+    var tableView: UITableView!
+    
+    //var timer: NSTimer = NSTimer()
+
+    
+    
     //array of songs returned by spotify search request
     var songs: [Song] = []
     
@@ -232,10 +241,20 @@ class ViewController: UIViewController {
 
         
     }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    
+    
+    
+    
+    
 
 
 }

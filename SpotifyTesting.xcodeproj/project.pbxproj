@@ -19,6 +19,7 @@
 		14A9336D1BD970D400C664E7 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A9336C1BD970D400C664E7 /* Spotify.framework */; };
 		14A9336F1BD970DE00C664E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A9336E1BD970DE00C664E7 /* SystemConfiguration.framework */; };
 		14A933731BD971E600C664E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A933721BD971E600C664E7 /* ViewController.m */; };
+		14D98B9A1BE42869002AE2E1 /* searchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D98B991BE42869002AE2E1 /* searchTableView.swift */; };
 		9C0048D06365AD003AADBFA7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548A356249A99310B1D3B668 /* Pods.framework */; };
 		F2502A7886E1DB89A0299CDE /* Pods_SpotifyTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F387F804D7539BD5E916B79C /* Pods_SpotifyTesting.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		14A933701BD971E600C664E7 /* SpotifyTesting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotifyTesting-Bridging-Header.h"; sourceTree = "<group>"; };
 		14A933711BD971E600C664E7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		14A933721BD971E600C664E7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14D98B991BE42869002AE2E1 /* searchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchTableView.swift; sourceTree = "<group>"; };
 		52198B3E5FFA4F4625F2E467 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		548A356249A99310B1D3B668 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA06B2016665F68A511680E7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				14A9333C1BD9705B00C664E7 /* AppDelegate.swift */,
 				14A9333E1BD9705B00C664E7 /* ViewController.swift */,
+				14D98B991BE42869002AE2E1 /* searchTableView.swift */,
 				14A08B741BE3054E00A3BC02 /* Song.swift */,
 				14A933711BD971E600C664E7 /* ViewController.h */,
 				14A933721BD971E600C664E7 /* ViewController.m */,
@@ -364,6 +367,7 @@
 				14A933731BD971E600C664E7 /* ViewController.m in Sources */,
 				14A9333F1BD9705B00C664E7 /* ViewController.swift in Sources */,
 				14A9333D1BD9705B00C664E7 /* AppDelegate.swift in Sources */,
+				14D98B9A1BE42869002AE2E1 /* searchTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

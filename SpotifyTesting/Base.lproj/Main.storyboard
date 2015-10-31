@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hmF-6d-UwJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -45,6 +45,14 @@
                                     <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tub-3W-Ocv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-ws-DCk">
+                                <rect key="frame" x="345" y="482" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="PHW-0B-Emm" kind="show" id="9ow-Kf-eGa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -54,6 +62,7 @@
                             <constraint firstItem="Kej-Vp-av7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="61:75" id="mHy-Yr-Joj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="t5b-DX-7vs"/>
                     <connections>
                         <outlet property="loginButton" destination="Kej-Vp-av7" id="aii-wp-0kd"/>
                         <outlet property="searchDisplayController" destination="C8d-T6-PKN" id="aC1-P0-hMO"/>
@@ -68,6 +77,77 @@
                         <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="c5m-PG-3ub"/>
                     </connections>
                 </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1111" y="347"/>
+        </scene>
+        <!--Search Table View-->
+        <scene sceneID="R5L-Tj-kE5">
+            <objects>
+                <tableViewController id="PHW-0B-Emm" customClass="searchTableView" customModule="SpotifyTesting" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o9B-wt-wnC" customClass="searchTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="WE0-IZ-ntl">
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="PHW-0B-Emm" id="rGj-JQ-2dn"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="9WZ-pT-NmA">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9WZ-pT-NmA" id="Wg4-P3-ZOU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PHW-0B-Emm" id="aDO-DI-ccY"/>
+                            <outlet property="delegate" destination="PHW-0B-Emm" id="1OE-ZJ-cr6"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="uGV-h5-QgV" id="npo-9Q-7f2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAC-51-hur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="uGV-h5-QgV">
+                    <connections>
+                        <outlet property="delegate" destination="PHW-0B-Emm" id="1Mc-RU-DxM"/>
+                        <outlet property="searchBar" destination="WE0-IZ-ntl" id="dE5-Zk-Uou"/>
+                        <outlet property="searchContentsController" destination="PHW-0B-Emm" id="8JQ-fC-9UQ"/>
+                        <outlet property="searchResultsDataSource" destination="PHW-0B-Emm" id="6qf-0W-YLC"/>
+                        <outlet property="searchResultsDelegate" destination="PHW-0B-Emm" id="yre-AU-dKO"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1754" y="347"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jTg-2a-f4G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hmF-6d-UwJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOt-N3-4wR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ADi-GM-Gkh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brm-aO-19o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="299" y="347"/>
         </scene>
