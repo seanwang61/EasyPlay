@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     
     
     //table view
-    @IBOutlet
-    var tableView: UITableView!
+    //@IBOutlet
+    //var tableView: UITableView!
     
     //var timer: NSTimer = NSTimer()
 

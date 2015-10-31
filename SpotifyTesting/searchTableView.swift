@@ -40,9 +40,12 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
         print("searchDisplayController called")
+        songs.removeAll()
+        if(searchActive == true){
         self.getSongs(searchText)
         
         self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -56,6 +59,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     }
     
     func getSongs(timer: String!) {
+        
         
         print("getSongs called")
         let searchTerm = timer
@@ -135,6 +139,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("tableView called")
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         let song = songs[indexPath.row]

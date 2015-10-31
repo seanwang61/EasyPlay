@@ -107,11 +107,9 @@
                                 <animations/>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="SongSearchBar" destination="0aY-QE-lor" id="ryh-SX-9EM"/>
-                        </connections>
                     </tableView>
                     <connections>
+                        <outlet property="SongSearchBar" destination="0aY-QE-lor" id="cHR-dj-9Kb"/>
                         <outlet property="searchDisplayController" destination="uGV-h5-QgV" id="npo-9Q-7f2"/>
                     </connections>
                 </tableViewController>
