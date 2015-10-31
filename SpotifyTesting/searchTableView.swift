@@ -13,14 +13,7 @@ import SwiftyJSON
 class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     
-    @IBOutlet weak var SearchBar: UITextField!
-    
-    
-    @IBAction func searchSongs(sender: AnyObject) {
-        print("searchDisplayController called")
-        self.getSongs(SearchBar.text);
-        
-    }
+
     
     var songs: [Song] = []
 
@@ -72,46 +65,13 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
                     self.tableView!.reloadData()
                 }
         }
-        // call to Spotify API
-        /*
-        Alamofire.request(.GET, "https://api.spotify.com/v1/search?q=loveland&type=track").response { request, response, data, error in
-        
-        let json = JSON(data: data!)
-        
-        print(json["tracks"]["items"].count);
-        //print(json["tracks"]["items"])
-        
-        for var i = 0; i < json["tracks"]["items"].count; i++ {
-        
-        let data = json["tracks"]["items"][i]
-        
-        // return the object list
-        let song = Song()
-        
-        song.title = data["name"].string!
-        song.album = data["album"]["name"].string!
-        song.artist = data["artists"][0]["name"].string!
-        song.trackID = data["id"].string!
-        
-        print(song.title)
-        print(song.artist)
-        print(song.trackID)
-        
-        self.songs += [song]
-        
-        }
-        
-        
-        dispatch_async(dispatch_get_main_queue()) {
-        self.tableView!.reloadData()
-        }
-        }*/
         
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
         
         print("searchDisplayController called")
+        self.songs.removeAll()
         self.getSongs(searchString)
         
         return true
@@ -142,7 +102,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         let song = songs[indexPath.row]
         
         cell.textLabel?.text = song.title
-        cell.detailTextLabel?.text = song.artist + " - " + song.album
+        //cell.detailTextLabel?.text = song.artist + " - " + song.album
         
         return cell
     }
