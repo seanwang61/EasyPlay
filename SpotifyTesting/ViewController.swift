@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 
+var player:SPTAudioStreamingController?
+
 class ViewController: UIViewController {
 
     //"https://api.spotify.com/v1/search?q=tania%20bowra&type=artist"
@@ -19,7 +21,7 @@ class ViewController: UIViewController {
     let kCallBackURL = "SpotifyTesting://callback"
 
     var session:SPTSession!
-    var player:SPTAudioStreamingController?
+    //var player:SPTAudioStreamingController?
 
     
     var userPlaylistTrackStrings = [NSURL]()
@@ -45,7 +47,7 @@ class ViewController: UIViewController {
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
         }
-        self.player?.setIsPlaying(isPlaying, callback: nil)
+        player?.setIsPlaying(isPlaying, callback: nil)
         
         if(isPlaying == false){
             isPlaying = true;
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
         Alamofire.request(.GET, "https://api.spotify.com/v1/search?q=loveland&type=track")
             .responseJSON { response in
                 debugPrint(response)*/
+        /*
         Alamofire.request(.GET, "https://api.spotify.com/v1/search?q=loveland&type=track").response { request, response, data, error in
                 
                 let json = JSON(data: data!)
@@ -87,7 +90,7 @@ class ViewController: UIViewController {
                     self.songs += [song]
                     
                 }
-        }
+        }*/
         
         
     }
@@ -95,11 +98,17 @@ class ViewController: UIViewController {
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
         }
+        
+        //debug
+        //self.addSongtoPlaylist("1UfBAJfmofTffrae5ls6DA") //fairytale
+
         player?.skipNext(nil)
     }
     
     func addSongtoPlaylist(trackID: String)
     {
+       // var userPlaylistTrackStrings = [NSURL]()
+
         print("song added to playlist!")
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
@@ -107,7 +116,11 @@ class ViewController: UIViewController {
         
         var formattedTrackName = NSURL(string: "spotify:track:"+trackID);
         print(formattedTrackName)
-        userPlaylistTrackStrings.append(formattedTrackName!)
+
+        //userPlaylistTrackStrings.append(formattedTrackName!)
+        player?.queueURI(formattedTrackName, callback: nil)
+
+        
         //self.player?.queueURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
         
     }
@@ -202,7 +215,8 @@ class ViewController: UIViewController {
                 //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
                 //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
                 
-                self.player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
+                //self.player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
+                player?.queuePlay(nil)
                 //self.player?.play
                 //self.player?.playURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
             })

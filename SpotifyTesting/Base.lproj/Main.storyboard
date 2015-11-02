@@ -5,10 +5,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MyViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpotifyTesting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyViewController" title="MyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SpotifyTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -78,7 +78,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1111" y="347"/>
+            <point key="canvasLocation" x="1203" y="417"/>
         </scene>
         <!--Search Table View-->
         <scene sceneID="R5L-Tj-kE5">
@@ -123,7 +123,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1754" y="347"/>
+            <point key="canvasLocation" x="1862" y="417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jTg-2a-f4G">

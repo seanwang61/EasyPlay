@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
 class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     
@@ -36,6 +37,7 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchActive = true;
     }
+    
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -140,6 +142,34 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         return songs.count
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        print(songs[row].title)
+        //ViewController().addSongtoPlaylist(songs[row].trackID)
+        //ViewController.addSongtoPlaylist(ViewController)
+        var formattedTrackName = NSURL(string: "spotify:track:"+songs[row].trackID);
+        print(formattedTrackName)
+        
+        //userPlaylistTrackStrings.append(formattedTrackName!)
+        player?.queueURI(formattedTrackName, callback: nil)
+        //player?.playURI(formattedTrackName, callback: nil)
+        //.ViewController.addSongtoPlaylist(songs[row].trackID)
+        
+        
+        
+    }
+/*
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        println(swiftBlogs[row])
+    }*/
+    
+
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView called")
@@ -151,9 +181,9 @@ class searchTableView: UITableViewController, UISearchBarDelegate, UISearchDispl
         let song = songs[indexPath.row]
         
         cell.textLabel?.text = song.title
-        }
-        //cell.detailTextLabel?.text = song.artist + " - " + song.album
         
+        cell.detailTextLabel?.text = song.artist + " - " + song.album
+        }
         return cell
     }
 
