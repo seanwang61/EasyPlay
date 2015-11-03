@@ -201,7 +201,7 @@ class ViewController: UIViewController {
             //SPTRequest.requestItemAtURI(<#T##uri: NSURL!##NSURL!#>, withSession: <#T##SPTSession!#>, callback: <#T##SPTRequestCallback!##SPTRequestCallback!##(NSError!, AnyObject!) -> Void#>)
             //SPTTrack.trackWithURI(<#T##uri: NSURL!##NSURL!#>, session: <#T##SPTSession!#>, callback: <#T##SPTRequestCallback!##SPTRequestCallback!##(NSError!, AnyObject!) -> Void#>)
             
-            self.addSongtoPlaylist("3KUs7BeZGMze6HDDdFlb7j") //loveland
+            //self.addSongtoPlaylist("3KUs7BeZGMze6HDDdFlb7j") //loveland
             self.addSongtoPlaylist("24w8CSNGN34hYPCrjdRLob") //fairytale
             
             SPTTrack.trackWithURI(NSURL(string: "spotify:track:3f9zqUnrnIq0LANhmnaF0V"), session: sessionObj, callback: { (error:NSError!, trackObj:AnyObject!) -> Void in
