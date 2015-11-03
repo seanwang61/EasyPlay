@@ -13,7 +13,7 @@ import SwiftyJSON
 
 var player:SPTAudioStreamingController?
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
     //"https://api.spotify.com/v1/search?q=tania%20bowra&type=artist"
     
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         
         
         //player?.queueURI(formattedTrackName, callback: nil)
-        //player?.replaceURIs(userPlaylistTrackStrings, withCurrentTrack: player?.trackListPosition, callback: nil)
+        //player?.replaceURIs(userPlaylistTrackStrings, withCurrentTrack: (player?.currentTrackIndex)!, callback: nil)
 
         
         //self.player?.queueURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
@@ -172,6 +172,8 @@ class ViewController: UIViewController {
         
         
         
+        
+        
     }
     
     func UpdateAfterFirstLogin() {
@@ -194,6 +196,7 @@ class ViewController: UIViewController {
         print("playing using session called")
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
+            player?.playbackDelegate = self;
             
         }
         player?.loginWithSession(sessionObj, callback: { (error:NSError!) -> Void in
@@ -262,6 +265,13 @@ class ViewController: UIViewController {
 
         
     }
+    
+    func audioStreaming(player: SPTAudioStreamingController, didStopPlayingTrack uri: NSURL) {
+        print("track ended" )
+    }
+    
+    
+
     
 
     
