@@ -117,8 +117,11 @@ class ViewController: UIViewController {
         var formattedTrackName = NSURL(string: "spotify:track:"+trackID);
         print(formattedTrackName)
 
-        //userPlaylistTrackStrings.append(formattedTrackName!)
-        player?.queueURI(formattedTrackName, callback: nil)
+        userPlaylistTrackStrings.append(formattedTrackName!)
+        
+        
+        //player?.queueURI(formattedTrackName, callback: nil)
+        //player?.replaceURIs(userPlaylistTrackStrings, withCurrentTrack: player?.trackListPosition, callback: nil)
 
         
         //self.player?.queueURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
@@ -215,8 +218,12 @@ class ViewController: UIViewController {
                 //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
                 //self.player?.playURI(NSURL(string: "spotify:track:4gqgQQHynn86YrJ9dEuMfc"), callback: nil)
                 
-                //self.player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
-                player?.queuePlay(nil)
+                player?.playURIs(self.userPlaylistTrackStrings, fromIndex: 0, callback: nil)
+                
+                
+                //player?.queuePlay(nil)
+                
+                
                 //self.player?.play
                 //self.player?.playURI(<#T##uri: NSURL!##NSURL!#>, callback: <#T##SPTErrorableOperationCallback!##SPTErrorableOperationCallback!##(NSError!) -> Void#>)
             })
